@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "truffle test",
+    "export-abi": "node scripts/export-abi",
     "build": "truffle compile"
   },
   "dependencies": {
