@@ -1,0 +1,21 @@
+{
+  "name": "balance-checker",
+  "version": "1.0.0",
+  "description": "Solidity smart contract for efficient balance checks",
+  "main": "main.js",
+  "author": "Will O'Beirne <wbobeirne@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "truffle test",
+    "build": "truffle compile"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "1.12.0"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "dotenv": "6.0.0",
+    "eth-gas-reporter": "0.1.12",
+    "truffle-hdwallet-provider": "0.0.6"
+  }
+}
