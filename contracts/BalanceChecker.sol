@@ -1,10 +1,9 @@
-// Fork of https://github.com/DeltaBalances/DeltaBalances.github.io/blob/master/smart_contract/deltabalances.sol
+// Built off of https://github.com/DeltaBalances/DeltaBalances.github.io/blob/master/smart_contract/deltabalances.sol
 pragma solidity ^0.4.21;
 
 // ERC20 contract interface
 contract Token {
-  function balanceOf(address /*tokenOwner*/) public view returns (uint /*balance*/);
-  function transfer(address /*to*/, uint /*tokens*/) public returns (bool /*success*/);
+  function balanceOf(address) public view returns (uint);
 }
 
 contract BalanceChecker {
@@ -15,11 +14,10 @@ contract BalanceChecker {
 
   /*
     Check the token balance of a wallet in a token contract
-    Avoids possible errors:
-      - returns 0 on invalid exchange contract 
+
+    Returns the balance of the token for user. Avoids possible errors:
       - return 0 on non-contract address 
-      
-    Mainly for internal use, but public for anyone who thinks it is useful
+      - returns 0 if the contract doesn't implement balanceOf
   */
   function tokenBalance(address user, address token) public view returns (uint) {
     // check if token is actually a contract
@@ -30,17 +28,19 @@ contract BalanceChecker {
     if (tokenCode > 0 && token.call(bytes4(0x70a08231), user)) {  
       return Token(token).balanceOf(user);
     } else {
-      return 0; // not a valid token, return 0 instead of error
+      return 0;
     }
   }
 
   /*
-    Check the token balances of a wallet for multiple tokens
-    Uses tokenBalance() to be able to return, even if a token isn't valid 
+    Check the token balances of a wallet for multiple tokens.
+    Pass 0x0 as a "token" address to get ETH balance.
+
     Possible error throws:
-      - extremely large arrays (gas cost too high) 
+      - extremely large arrays for user and or tokens (gas cost too high) 
           
-    Returns array of token balances in wei units.
+    Returns a one-dimensional that's user.length * tokens.length long. The
+    array is ordered by all of the 0th users token balances,
   */
   function balances(address user, address[] tokens) external view returns (uint[]) {
     uint[] memory addrBalances = new uint[](tokens.length);
