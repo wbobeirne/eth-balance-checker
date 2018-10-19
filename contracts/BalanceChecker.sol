@@ -40,21 +40,14 @@ contract BalanceChecker {
       - extremely large arrays for user and or tokens (gas cost too high) 
           
     Returns a one-dimensional that's user.length * tokens.length long. The
-    array is ordered by all of the 0th users token balances,
+    array is ordered by all of the 0th users token balances, then the 1th
+    user, and so on.
   */
   function balances(address[] users, address[] tokens) external view returns (uint[]) {
     uint[] memory addrBalances = new uint[](tokens.length * users.length);
     
     for(uint i = 0; i < users.length; i++) {
       for (uint j = 0; j < tokens.length; j++) {
-        // 0 + 3 * 0 = 0
-        // 1 + 3 * 0 = 1
-        // 2 + 3 * 0 = 2
-
-        // 0 + 3 * 1 = 3
-        // 1 + 3 * 1 = 4
-        // 2 + 3 * 1 = 5
-
         uint addrIdx = j + tokens.length * i;
         if (tokens[j] != address(0x0)) { 
           addrBalances[addrIdx] = tokenBalance(users[i], tokens[j]);
