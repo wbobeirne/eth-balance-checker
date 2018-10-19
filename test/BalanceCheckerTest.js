@@ -20,7 +20,6 @@ contract("BalanceChecker", accounts => {
       [accounts[0], accounts[1]],
       ["0x0"]
     );
-    console.log("balances", balances);
     assert.ok(balances[0]);
     assert.equal(
       balance.toString(),
@@ -28,12 +27,31 @@ contract("BalanceChecker", accounts => {
     );
   });
 
-  it.skip("Correctly checks a token balance", async () => {
+  it("Correctly checks a token balance", async () => {
     const tokenBalance = await testToken.balanceOf(accounts[0]);
-    const balances = await balanceChecker.balances.call(accounts[0], [
-      testToken.address
-    ]);
+    const balances = await balanceChecker.balances.call(
+      [accounts[0]],
+      [testToken.address],
+    );
     assert.ok(balances[0]);
-    assert.equal(balance.toString(), balances[0].toString());
+    assert.equal(tokenBalance.toString(), balances[0].toString());
+  });
+
+  it("Returns zero balance for a non-contract address", async () => {
+    const tokenBalance = await testToken.balanceOf(accounts[0]);
+    const balances = await balanceChecker.balances.call(
+      [accounts[0]],
+      [accounts[0]],
+    );
+    assert.ok(balances[0].isZero());
+  });
+
+  it("Returns zero balance for a contract that doesn't implement balanceOf", async () => {
+    const tokenBalance = await testToken.balanceOf(accounts[0]);
+    const balances = await balanceChecker.balances.call(
+      [accounts[0]],
+      [balanceChecker.address],
+    );
+    assert.ok(balances[0].isZero());
   });
 });
