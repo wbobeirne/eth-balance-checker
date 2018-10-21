@@ -26,6 +26,7 @@
   "dependencies": {
     "@types/web3": "1.0.10",
     "ethers": "4.0.7",
+    "truffle": "^4.1.14",
     "web3": "1.0.0-beta.36"
   },
   "files": [
