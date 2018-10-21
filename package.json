@@ -1,6 +1,6 @@
 {
   "name": "eth-balance-checker",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Solidity smart contract for efficient balance checks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
