@@ -10,7 +10,8 @@
     "build": "npm run build:contract && npm run build:lib",
     "build:lib": "tsc",
     "build:contract": "truffle compile && node scripts/export-abi",
-    "test:lib": "echo whaaat",
+    "test": "npm run test:lib && npm run test:contract",
+    "test:lib": "echo 'no tests yet'",
     "test:contract": "truffle test",
     "prepublish": "npm run build"
   },
