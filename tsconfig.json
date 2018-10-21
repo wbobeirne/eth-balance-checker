@@ -2,8 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "outDir": "dist",
+    "outDir": "lib",
     "rootDir": "src/",
+    "declaration": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
@@ -13,8 +14,5 @@
     "esModuleInterop": true,
     "lib": ["es2017"]
   },
-  "files": [
-    "src/web3.ts",
-    "src/ethers.ts"
-  ]
+  "include": ["src"]
 }

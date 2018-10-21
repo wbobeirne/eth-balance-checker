@@ -1,9 +1,9 @@
-import { Contract } from 'ethers';
+import { Contract, Signer } from 'ethers';
 import { Provider } from 'ethers/providers';
-import { DEFAULT_CONTRACT_ADDRESS, Options } from './common';
+import { DEFAULT_CONTRACT_ADDRESS, Options, formatAddressBalances } from './common';
 import BalanceCheckerABI from './abis/BalanceChecker.abi.json';
 
-function getContract(provider: Provider, address?: string) {
+function getContract(provider: Provider | Signer, address?: string) {
   return new Contract(
     address || DEFAULT_CONTRACT_ADDRESS,
     BalanceCheckerABI,
@@ -12,23 +12,23 @@ function getContract(provider: Provider, address?: string) {
 }
 
 export async function getAddressBalances(
-  provider: Provider,
+  provider: Provider | Signer,
   address: string,
   tokens: string[],
   options: Options = {},
 ) {
   const contract = getContract(provider, options.contractAddress);
   const balances = await contract.balances([address], tokens);
-  return balances;
+  return formatAddressBalances(balances, [address], tokens)[address];
 }
 
 export async function getAddressesBalances(
-  provider: Provider,
+  provider: Provider | Signer,
   addresses: string[],
   tokens: string[],
   options: Options = {},
 ) {
   const contract = getContract(provider, options.contractAddress);
   const balances = await contract.balances(addresses, tokens);
-  return balances;
+  return formatAddressBalances(balances, addresses, tokens);
 }

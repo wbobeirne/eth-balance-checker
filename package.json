@@ -1,8 +1,9 @@
 {
-  "name": "balance-checker",
+  "name": "eth-balance-checker",
   "version": "1.0.0",
   "description": "Solidity smart contract for efficient balance checks",
-  "main": "main.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "author": "Will O'Beirne <wbobeirne@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -10,7 +11,8 @@
     "build:lib": "tsc",
     "build:contract": "truffle compile && node scripts/export-abi",
     "test:lib": "echo whaaat",
-    "test:contract": "truffle test"
+    "test:contract": "truffle test",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "chai": "4.2.0",
@@ -24,5 +26,10 @@
     "@types/web3": "1.0.10",
     "ethers": "4.0.7",
     "web3": "1.0.0-beta.36"
-  }
+  },
+  "files": [
+    "lib",
+    "abis",
+    "contracts"
+  ]
 }
