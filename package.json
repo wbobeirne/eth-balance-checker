@@ -6,17 +6,23 @@
   "author": "Will O'Beirne <wbobeirne@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "truffle test",
-    "export-abi": "node scripts/export-abi",
-    "build": "truffle compile"
-  },
-  "dependencies": {
-    "openzeppelin-solidity": "1.12.0"
+    "build": "npm run build:contract && npm run build:lib",
+    "build:lib": "tsc",
+    "build:contract": "truffle compile && node scripts/export-abi",
+    "test:lib": "echo whaaat",
+    "test:contract": "truffle test"
   },
   "devDependencies": {
     "chai": "4.2.0",
     "dotenv": "6.0.0",
     "eth-gas-reporter": "0.1.12",
-    "truffle-hdwallet-provider": "0.0.6"
+    "openzeppelin-solidity": "1.12.0",
+    "truffle-hdwallet-provider": "0.0.6",
+    "typescript": "3.1.3"
+  },
+  "dependencies": {
+    "@types/web3": "1.0.10",
+    "ethers": "4.0.7",
+    "web3": "1.0.0-beta.36"
   }
 }
