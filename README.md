@@ -4,7 +4,7 @@
 </p>
 
 A smart contract and library pair that allows you to check for multiple ERC20 and Ether
-balances across multiple addresses in a single call.
+balances across multiple addresses in a single RPC call.
 
 ## Demo
 
