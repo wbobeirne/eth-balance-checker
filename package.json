@@ -1,7 +1,7 @@
 {
   "name": "eth-balance-checker",
   "version": "0.1.0",
-  "description": "Solidity smart contract for efficient balance checks",
+   "description": "Ethereum smart contract for efficient ERC20 and Ether balance checks.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Will O'Beirne <wbobeirne@gmail.com>",
