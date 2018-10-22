@@ -3,7 +3,7 @@
   <h1>Ethereum Balance Checker</h1>
 </p>
 
-A contract and library pair that allows you to check formultiple token and ETH
+A smart contract and library pair that allows you to check for multiple ERC20 and Ether
 balances across multiple addresses in a single call.
 
 ## Demo
