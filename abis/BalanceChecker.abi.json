@@ -31,8 +31,8 @@
   "constant": true,
   "inputs": [
    {
-    "name": "user",
-    "type": "address"
+    "name": "users",
+    "type": "address[]"
    },
    {
     "name": "tokens",

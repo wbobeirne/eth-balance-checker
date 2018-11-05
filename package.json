@@ -1,22 +1,38 @@
 {
-  "name": "balance-checker",
-  "version": "1.0.0",
-  "description": "Solidity smart contract for efficient balance checks",
-  "main": "main.js",
+  "name": "eth-balance-checker",
+  "version": "0.1.0",
+   "description": "Ethereum smart contract for efficient ERC20 and Ether balance checks.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "author": "Will O'Beirne <wbobeirne@gmail.com>",
+  "contributors": ["Henry Nguyen"],
   "license": "MIT",
   "scripts": {
-    "test": "truffle test",
-    "export-abi": "node scripts/export-abi",
-    "build": "truffle compile"
-  },
-  "dependencies": {
-    "openzeppelin-solidity": "1.12.0"
+    "build": "npm run build:contract && npm run build:lib",
+    "build:lib": "tsc",
+    "build:contract": "truffle compile && node scripts/export-abi",
+    "test": "npm run test:lib && npm run test:contract",
+    "test:lib": "echo 'no tests yet'",
+    "test:contract": "truffle test",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "chai": "4.2.0",
     "dotenv": "6.0.0",
     "eth-gas-reporter": "0.1.12",
-    "truffle-hdwallet-provider": "0.0.6"
-  }
+    "openzeppelin-solidity": "1.12.0",
+    "truffle-hdwallet-provider": "0.0.6",
+    "typescript": "3.1.3"
+  },
+  "dependencies": {
+    "@types/web3": "1.0.10",
+    "ethers": "4.0.7",
+    "truffle": "^4.1.14",
+    "web3": "1.0.0-beta.36"
+  },
+  "files": [
+    "lib",
+    "abis",
+    "contracts"
+  ]
 }
