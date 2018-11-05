@@ -55,10 +55,10 @@ interface Options {
 ```js
 Promise<{
   // Ether balance
-  "0x0": BigNumber,
+  "0x0": "100",
   // Token balances
-  "0x123...": BigNumber,
-  "0x456...": BigNumber,
+  "0x123...": "500",
+  "0x456...": "100000",
   ...
 }>
 ```
@@ -72,7 +72,7 @@ const web3 = new Web3(...);
 const address = '0x123...';
 const tokens = ['0x0', '0x456...'];
 getAddressBalances(web3, address, tokens).then(balances => {
-  console.log(balances); // { "0x0": BigNumber, "0x456...": BigNumber }
+  console.log(balances); // { "0x0": "100", "0x456...": "200" }
 });
 ```
 
@@ -90,10 +90,10 @@ Promise<{
   // Address as the key
   "0x123...": {
     // Ether balance
-    "0x0": BigNumber,
+    "0x0": "100",
     // Token balances
-    "0x456...": BigNumber,
-    "0x789...": BigNumber,
+    "0x456...": "500",
+    "0x789...": "10000",
     ...
   },
   ...
@@ -111,7 +111,7 @@ const ethers = Ethers.getDefaultProvider();
 const addresses = ['0x123...', '0x456...'];
 const tokens = ['0x0', '0x789...'];
 getAddressBalances(ethers, addresses, tokens).then(balances => {
-  console.log(balances); // { "0x123...": { "0x0": BigNumber, ... }, ... }
+  console.log(balances); // { "0x123...": { "0x0": "100", ... }, ... }
 });
 ```
 

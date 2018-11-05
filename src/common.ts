@@ -1,11 +1,9 @@
-import BN from 'bn.js';
-
 export interface Options {
   contractAddress?: string;
 }
 
 export type BalanceMap = {
-  [tokenAddress: string]: BN;
+  [tokenAddress: string]: string;
 }
 
 export type AddressBalanceMap = {
@@ -14,12 +12,13 @@ export type AddressBalanceMap = {
 
 export const DEFAULT_CONTRACT_ADDRESS = '0xb1f8e55c7f64d203c1400b9d8555d050f94adf39';
 
-export function formatAddressBalances(values: BN[], addresses: string[], tokens: string[]) {
+export function formatAddressBalances<T>(values: T[], addresses: string[], tokens: string[]) {
   const balances: AddressBalanceMap = {};
   addresses.forEach((addr, addrIdx) => {
     balances[addr] = {};
     tokens.forEach((tokenAddr, tokenIdx) => {
-      balances[addr][tokenAddr] = values[addrIdx * tokens.length + tokenIdx];
+      const balance = values[addrIdx * tokens.length + tokenIdx];
+      balances[addr][tokenAddr] = balance.toString();
     });
   });
   return balances;

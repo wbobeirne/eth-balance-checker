@@ -1,6 +1,11 @@
 import { Contract, Signer } from 'ethers';
+import { BigNumber } from 'ethers/utils';
 import { Provider } from 'ethers/providers';
-import { DEFAULT_CONTRACT_ADDRESS, Options, formatAddressBalances } from './common';
+import {
+  DEFAULT_CONTRACT_ADDRESS,
+  Options,
+  formatAddressBalances
+} from './common';
 import BalanceCheckerABI from './abis/BalanceChecker.abi.json';
 
 function getContract(provider: Provider | Signer, address?: string) {
@@ -19,7 +24,7 @@ export async function getAddressBalances(
 ) {
   const contract = getContract(provider, options.contractAddress);
   const balances = await contract.balances([address], tokens);
-  return formatAddressBalances(balances, [address], tokens)[address];
+  return formatAddressBalances<BigNumber>(balances, [address], tokens)[address];
 }
 
 export async function getAddressesBalances(
@@ -30,5 +35,5 @@ export async function getAddressesBalances(
 ) {
   const contract = getContract(provider, options.contractAddress);
   const balances = await contract.balances(addresses, tokens);
-  return formatAddressBalances(balances, addresses, tokens);
+  return formatAddressBalances<BigNumber>(balances, addresses, tokens);
 }

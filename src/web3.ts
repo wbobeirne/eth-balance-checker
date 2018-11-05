@@ -1,5 +1,10 @@
 import Web3 from 'web3';
-import { DEFAULT_CONTRACT_ADDRESS, Options, formatAddressBalances } from './common';
+import BN from 'bn.js';
+import {
+  DEFAULT_CONTRACT_ADDRESS,
+  Options,
+  formatAddressBalances,
+} from './common';
 import BalanceCheckerABI from './abis/BalanceChecker.abi.json';
 
 function getContract(provider: Web3, address?: string) {
@@ -17,7 +22,7 @@ export async function getAddressBalances(
 ) {
   const contract = getContract(provider, options.contractAddress);
   const balances = await contract.methods.balances([address], tokens).call();
-  return formatAddressBalances(balances, [address], tokens)[address];
+  return formatAddressBalances<BN>(balances, [address], tokens)[address];
 }
 
 export async function getAddressesBalances(
@@ -28,5 +33,5 @@ export async function getAddressesBalances(
 ) {
   const contract = getContract(provider, options.contractAddress);
   const balances = await contract.methods.balances(addresses, tokens).call();
-  return formatAddressBalances(balances, addresses, tokens);
+  return formatAddressBalances<BN>(balances, addresses, tokens);
 }
