@@ -6,7 +6,6 @@
     "rootDir": "src/",
     "declaration": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitAny": true,

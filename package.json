@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Will O'Beirne <wbobeirne@gmail.com>",
+  "contributors": ["Henry Nguyen"],
   "license": "MIT",
   "scripts": {
     "build": "npm run build:contract && npm run build:lib",
