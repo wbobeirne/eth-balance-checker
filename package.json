@@ -1,12 +1,14 @@
 {
   "name": "eth-balance-checker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ethereum smart contract and library for efficient ERC20 and Ether balance checks.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "sideEffects": false,
   "author": "Will O'Beirne <wbobeirne@gmail.com>",
-  "contributors": ["Henry Nguyen"],
+  "contributors": [
+    "Henry Nguyen"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/wbobeirne/eth-balance-checker",
   "bugs": {
