@@ -25,6 +25,11 @@ yarn add eth-balance-checker
 The main contract is in `contracts/BalanceChecker.sol`. Its associated ABI is in `abis/BalanceChecker.abi.json`. Both of these are included in the NPM package if you want to compile them yourself, or extend them with another
 contract.
 
+#### Deployed Addresses
+
+- mainnet: `0xb1f8e55c7f64d203c1400b9d8555d050f94adf39`
+- ropsten: `0x8D9708f3F514206486D7E988533f770a16d074a7`
+
 ### Library
 
 There are separate libraries for [web3.js](https://github.com/ethereum/web3.js/)
