@@ -29,6 +29,7 @@ contract.
 
 - mainnet: `0xb1f8e55c7f64d203c1400b9d8555d050f94adf39`
 - ropsten: `0x8D9708f3F514206486D7E988533f770a16d074a7`
+- rinkeby: `0x3183B673f4816C94BeF53958BaF93C671B7F8Cf2`
 
 ### Library
 
