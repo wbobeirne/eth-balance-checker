@@ -1,12 +1,13 @@
-import { Contract, Signer } from 'ethers';
-import { BigNumber } from 'ethers/utils';
-import { Provider } from 'ethers/providers';
+import { Contract, providers, Signer, utils } from 'ethers';
 import {
   DEFAULT_CONTRACT_ADDRESS,
   Options,
   formatAddressBalances
 } from './common';
 import BalanceCheckerABI from './abis/BalanceChecker.abi.json';
+
+type Provider = providers.Provider;
+type BigNumber = utils.BigNumber;
 
 function getContract(provider: Provider | Signer, address?: string) {
   return new Contract(

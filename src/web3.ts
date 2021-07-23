@@ -5,7 +5,8 @@ import {
   Options,
   formatAddressBalances,
 } from './common';
-import BalanceCheckerABI from './abis/BalanceChecker.abi.json';
+// https://github.com/ChainSafe/web3.js/issues/3310#issuecomment-701590114
+const BalanceCheckerABI = require('./abis/BalanceChecker.abi.json');
 
 function getContract(provider: Web3, address?: string) {
   return new provider.eth.Contract(
