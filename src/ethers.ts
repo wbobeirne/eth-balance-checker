@@ -1,4 +1,4 @@
-import { Contract, providers, Signer, utils } from 'ethers';
+import { BigNumber, Contract, providers, Signer } from 'ethers';
 import {
   DEFAULT_CONTRACT_ADDRESS,
   Options,
@@ -7,7 +7,6 @@ import {
 import BalanceCheckerABI from './abis/BalanceChecker.abi.json';
 
 type Provider = providers.Provider;
-type BigNumber = utils.BigNumber;
 
 function getContract(provider: Provider | Signer, address?: string) {
   return new Contract(
