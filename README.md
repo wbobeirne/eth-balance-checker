@@ -35,6 +35,7 @@ contract.
 - binance smart chain testnet: `0x2352c63A83f9Fd126af8676146721Fa00924d7e4`
 - polygon: `0x2352c63A83f9Fd126af8676146721Fa00924d7e4`
 - mumbai: `0x2352c63A83f9Fd126af8676146721Fa00924d7e4`
+- arbitrum: `0x151E24A486D7258dd7C33Fb67E4bB01919B7B32c`
 
 ### Library
 
