@@ -1,6 +1,6 @@
 {
   "name": "eth-balance-checker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ethereum smart contract and library for efficient ERC20 and Ether balance checks.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
