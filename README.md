@@ -121,7 +121,7 @@ import { getAddressesBalances } from 'eth-balance-checker/lib/ethers';
 const ethers = Ethers.getDefaultProvider();
 const addresses = ['0x123...', '0x456...'];
 const tokens = ['0x0', '0x789...'];
-getAddressBalances(ethers, addresses, tokens).then(balances => {
+getAddressesBalances(ethers, addresses, tokens).then(balances => {
   console.log(balances); // { "0x123...": { "0x0": "100", ... }, ... }
 });
 ```
