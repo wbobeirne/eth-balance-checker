@@ -43,6 +43,7 @@ contract.
 - fantom: `0x07f697424ABe762bB808c109860c04eA488ff92B` and `0xfC701A6b65e1BcF59fb3BDbbe5cb41f35FC7E009`
 - ether-classic: `0xfC701A6b65e1BcF59fb3BDbbe5cb41f35FC7E009`
 - Tron: `TN8RtFXeQZyFHGmH1iiSRm5r4CRz1yWkCf` --> Yes, it also works in Tron! Use hex addresses format to interact with it (41...).
+- Moonbeam: `0xf614056a46e293DD701B9eCeBa5df56B354b75f9`
 
 ### Library
 
