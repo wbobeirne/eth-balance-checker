@@ -43,7 +43,10 @@ contract.
 - fantom: `0x07f697424ABe762bB808c109860c04eA488ff92B` and `0xfC701A6b65e1BcF59fb3BDbbe5cb41f35FC7E009`
 - ether-classic: `0xfC701A6b65e1BcF59fb3BDbbe5cb41f35FC7E009`
 - Tron: `TN8RtFXeQZyFHGmH1iiSRm5r4CRz1yWkCf` --> Yes, it also works in Tron! Use hex addresses format to interact with it (41...).
-
+- OKC : `0x42CD9068d471c861796D56A37f8BFEae19DAC12F`
+- EVMOS : `0x42CD9068d471c861796D56A37f8BFEae19DAC12F`
+- Huobi Chain : `0x42CD9068d471c861796D56A37f8BFEae19DAC12F`
+- Canto : `0x42CD9068d471c861796D56A37f8BFEae19DAC12F`
 ### Library
 
 There are separate libraries for [web3.js](https://github.com/ethereum/web3.js/)
